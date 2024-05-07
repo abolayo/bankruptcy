@@ -2,7 +2,7 @@ import os
 import pickle as pk
 import pandas as pd
 import streamlit
-
+print("Current working directory:",os.getcwd())
 list_features = [' Net Income to Total Assets',
                   ' Borrowing dependency',
                  ' Total income/Total expense',
@@ -39,7 +39,7 @@ def wrangle(data):
 
 def main():
     streamlit.title('TAIWAN COMPANIES BANKRUPTCY PREDICTIONS')
-    streamlit.image('image1.jpeg')
+    streamlit.image('bankruptcy.jpeg')
     streamlit.write("""
         ## Fill the form below
     """)
