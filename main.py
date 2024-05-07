@@ -3,17 +3,17 @@ import pickle as pk
 import pandas as pd
 import streamlit
 
-list_features = ['Net Income to Total Assets',
-                 'Borrowing_dependency',
-                 'Total income/Total expense',
-                 'Persistent EPS in the Last Four Seasons',
-                 'ROA(A) before interest and % after tax',
-                 'Retained Earnings to Total Assets',
-                 'Liability to Equity',
-                 'Total debt/Total net worth',
-                 'Equity to Liability',
-                 'Pre-tax net Interest Rate']
-with open('model.pkl', 'rb') as model:
+list_features = [' Net Income to Total Assets',
+                  ' Borrowing dependency',
+                 ' Total income/Total expense',
+                 ' Persistent EPS in the Last Four Seasons',
+                 ' ROA(A) before interest and % after tax',
+                 ' Retained Earnings to Total Assets',
+                 ' Liability to Equity',
+                 ' Total debt/Total net worth',
+                 ' Equity to Liability',
+                 ' Pre-tax net Interest Rate']
+with open('model_select.pkl', 'rb') as model:
     model_use = pk.load(model)
 
 
@@ -24,16 +24,16 @@ def app_model(input_df):
 
 
 def wrangle(data):
-    data['Net Income to Total Assets'] = data['net_assets']
-    data['Borrowing_dependency'] = data['borrowing_dependency']
-    data['Total income/Total expense'] = data['expense']
-    data['Persistent EPS in the Last Four Seasons'] = data['seasons']
-    data['ROA(A) before interest and % after tax'] = data['tax']
-    data['Retained Earnings to Total Assets'] = data['assets']
-    data['Liability to Equity'] = data['equity']
-    data['Total debt/Total net worth'] = data['net_worth']
-    data['Equity to Liability'] = data['liability']
-    data['Pre-tax net Interest Rate'] = data['interest_rate']
+    data[' Net Income to Total Assets'] = data['net_assets']
+    data[' Borrowing_dependency'] = data['borrowing_dependency']
+    data[' Total income/Total expense'] = data['expense']
+    data[' Persistent EPS in the Last Four Seasons'] = data['seasons']
+    data[' ROA(A) before interest and % after tax'] = data['tax']
+    data[' Retained Earnings to Total Assets'] = data['assets']
+    data[' Liability to Equity'] = data['equity']
+    data[' Total debt/Total net worth'] = data['net_worth']
+    data[' Equity to Liability'] = data['liability']
+    data[' Pre-tax net Interest Rate'] = data['interest_rate']
     return data
 
 
