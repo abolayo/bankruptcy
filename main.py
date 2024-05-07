@@ -13,13 +13,13 @@ list_features = [' Net Income to Total Assets',
                  ' Total debt/Total net worth',
                  ' Equity to Liability',
                  ' Pre-tax net Interest Rate']
-with open('model_select.pkl', 'rb') as model:
-    model_use = pk.load(model)
+with open('model_select.pkl', 'rb') as file:
+    model_predictor = pk.load(file)
 
 
 # Creating model that perform classifications on user's inputs
 def app_model(input_df):
-    prediction = model_use.predict(input_df)
+    prediction = model_predictor.predict(input_df)
     return prediction
 
 
